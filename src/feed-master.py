@@ -138,6 +138,7 @@ class GenerateFeed(cli.Application):
             feed_file.write("<description>%s</description>\n" % settings['info']['description'].encode('utf-8'))
             feed_file.write("<link>%s</link>\n" % settings['info']['link'].encode('utf-8'))
             feed_file.write("<pubDate>%s</pubDate>\n" % last_date)
+            feed_file.write("<image><url>http://burdukov.by/echo.jpg</url></image>\n")
             feed_file.write("<language>%s</language>\n" % settings['language'])
             feed_file.write("<generator>feed-master by Umputun</generator>\n")
 
@@ -145,7 +146,7 @@ class GenerateFeed(cli.Application):
                 try:
                     feed_file.write("<item>\n")
                     feed_file.write("<title>%s</title>\n" % item['title'].encode('utf-8'))
-                    feed_file.write("<description>%s</description>\n" % item['description'].encode('utf-8'))
+                    feed_file.write("<description><![CDATA[%s]]></description>\n" % item['description'].encode('utf-8'))
                     feed_file.write("<link>%s</link>\n" % item['_id'].encode('utf-8'))
                     feed_file.write("<pubDate>%s</pubDate>\n" % format_datetime_rfc2822(item['published']))
                     feed_file.write("<guid>%s</guid>\n" % item['_id'].encode('utf-8'))

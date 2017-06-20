@@ -8,7 +8,7 @@ run:
 
 run-with-mongo:
 	-docker run -d --name=mongodb -p 27017:27017 -v $(shell pwd)/data/mongo:/data/db mongo:latest mongod --smallfiles --noprealloc
-	# -docker rm -f feed-master
+	-docker rm -f feed-master
 	docker run -d --name feed-master -v $(shell pwd)/config:/srv/config \
 	-p 8099:8099 --link mongodb:mongodb umputun/feed-master
 

@@ -59,7 +59,7 @@ class UpdateItems(cli.Application):
         else:
             mongo_client = pymongo.MongoClient(self.mongo_host)
 
-        db = mongo_client["feed_master"]["feed"]
+        db = mongo_client[settings['table']]["feed"]
         db.create_index([("published", -1)])
 
         new_items = 0
@@ -120,7 +120,7 @@ class GenerateFeed(cli.Application):
             mongo_client = pymongo.MongoClient(mongo_ip, int(mongo_port))
         else:
             mongo_client = pymongo.MongoClient(self.mongo_host)
-        db = mongo_client["feed_master"]["feed"]
+        db = mongo_client[settings['table']]["feed"]
 
         items = db.find().sort("published", -1).limit(settings['max_items_total'])
         last_date = format_datetime_rfc2822(db.find_one(sort=[("published", -1)])['published'])

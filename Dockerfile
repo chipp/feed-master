@@ -25,7 +25,7 @@ VOLUME ["/srv/config"]
 USER feedmaster
 ADD src/feed-master.py /srv/feed-master.py
 ADD exec.sh /srv/exec.sh
-ADD src/config/__init__.py /srv/config/__init__.py
+ADD src/__init__.py /srv/config/__init__.py
 
 WORKDIR /srv
 ENTRYPOINT ["/srv/exec.sh"]

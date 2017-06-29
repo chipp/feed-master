@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd /srv/data
-python -m SimpleHTTPServer 8099 &
+python -m SimpleHTTPServer $1 &
 
 while true
 do

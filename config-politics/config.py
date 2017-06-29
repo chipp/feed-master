@@ -22,5 +22,6 @@ settings = {
     },
     "language": "ru-ru",
     "max_items_per_feed": 10,  # how many episoded to keep per feed
-    "max_items_total": 200    # total number of episodes in common feed
+    "max_items_total": 200,    # total number of episodes in common feed
+    "table": "feed-master-politics"
 }

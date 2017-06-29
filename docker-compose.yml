@@ -1,15 +1,27 @@
 version: '3'
 services:
-  feed-master:
+  feed-master-politics:
     build: .
     image: umputun/feed-master-politics
     container_name: feed-master-politics
     volumes:
-      - ./config:/srv/config
+      - ./config-politics:/srv/config
     ports:
       - 8099:8099
     links:
       - mongodb
+    entrypoint: /srv/exec.sh 8099
+  feed-master-history:
+    build: .
+    image: umputun/feed-master-history
+    container_name: feed-master-history
+    volumes:
+      - ./config-history:/srv/config
+    ports:
+      - 8098:8098
+    links:
+      - mongodb
+    entrypoint: /srv/exec.sh 8098
   mongodb:
     image: mongo:latest
     container_name: mongodb

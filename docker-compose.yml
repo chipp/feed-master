@@ -2,8 +2,8 @@ version: '3'
 services:
   feed-master:
     build: .
-    image: umputun/feed-master
-    container_name: feed-master
+    image: umputun/feed-master-politics
+    container_name: feed-master-politics
     volumes:
       - ./config:/srv/config
     ports:

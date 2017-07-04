@@ -1,7 +1,6 @@
 # coding=utf-8
 
 feeds = [
-    ("A-Team", "http://www.echo.msk.ru/programs/a_team/rss-audio.xml"),
     ("Персонально ваш", "http://echo.msk.ru/programs/personalnovash/rss-audio.xml"),
     ("Ганапольское", "http://www.echo.msk.ru/programs/ganapolskoe_itogi/rss-audio.xml"),
     ("Кейс", "http://www.echo.msk.ru/programs/keys/rss-audio.xml"),
@@ -10,13 +9,12 @@ feeds = [
     ("Особое мнение", "http://echo.msk.ru/programs/personalno/rss-audio.xml"),
     ("2017", "http://www.echo.msk.ru/programs/year2017/rss-audio.xml"),
     ("Интервью", "http://www.echo.msk.ru/programs/beseda/rss-audio.xml"),
-    ("48 минут", "http://www.echo.msk.ru/programs/48minut/rss-audio.xml"),
     ("Невзоровские среды", "http://echo.msk.ru/programs/nevsredy/rss-audio.xml")
 ]
 
 settings = {
     "info": {
-        "title": u"Эхо Москвы – Политика",
+        "title": u"Эхо Москвы",
         "description": u"Правильный, комбинированный фид избранных передач (версия 2)",
         "link": "http://echo.msk.ru"
     },

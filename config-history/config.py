@@ -14,7 +14,8 @@ settings = {
     "info": {
         "title": u"Эхо Москвы - Потом",
         "description": u"Правильный, комбинированный фид избранных передач (версия 2)",
-        "link": "http://echo.msk.ru"
+        "link": "http://echo.msk.ru",
+        "image": "http://burdukov.by/echo-later.jpg"
     },
     "language": "ru-ru",
     "max_items_per_feed": 10,  # how many episoded to keep per feed

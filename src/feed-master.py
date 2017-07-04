@@ -138,7 +138,7 @@ class GenerateFeed(cli.Application):
             feed_file.write("<description>%s</description>\n" % settings['info']['description'].encode('utf-8'))
             feed_file.write("<link>%s</link>\n" % settings['info']['link'].encode('utf-8'))
             feed_file.write("<pubDate>%s</pubDate>\n" % last_date)
-            feed_file.write("<image><url>http://burdukov.by/echo.jpg</url></image>\n")
+            feed_file.write("<image><url>%s</url></image>\n" % settings['info']['image'].encode('utf-8'))
             feed_file.write("<language>%s</language>\n" % settings['language'])
             feed_file.write("<generator>feed-master by Umputun</generator>\n")
 

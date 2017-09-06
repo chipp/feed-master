@@ -16,6 +16,7 @@ services:
       - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=echo-now.burdukov.by
       - LETSENCRYPT_EMAIL=chippcheg@gmail.com
+    restart: unless-stopped
   feed-master-later:
     build: .
     image: umputun/feed-master-later
@@ -32,12 +33,14 @@ services:
       - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=echo-later.burdukov.by
       - LETSENCRYPT_EMAIL=chippcheg@gmail.com
+    restart: unless-stopped
   mongodb:
     image: mongo:latest
     container_name: mongodb
     volumes:
       - ./data/mongo:/data/db
     command: mongod --smallfiles --noprealloc
+    restart: unless-stopped
 networks:
   default:
     external:

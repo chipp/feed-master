@@ -9,7 +9,7 @@ RUN \
  apt-get update && apt-get upgrade -y --no-install-recommends && \
  apt-get install -y python-pip && \
  apt-get autoremove -y && apt-get clean && \
- pip install -r /requirements.txt && \
+ pip install -r /requirements.txt -i https://pypi.python.org/simple/ && \
  rm -f requirements.txt && \
  apt-get purge -y --auto-remove $build_deps && \
  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \

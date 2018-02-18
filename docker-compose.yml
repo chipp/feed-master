@@ -1,37 +1,20 @@
 version: '3'
 services:
-  feed-master-now:
+  feed-master:
     build: .
-    image: umputun/feed-master-now
-    container_name: feed-master-now
+    image: umputun/feed-master
+    container_name: feed-master
     volumes:
-      - ./config-politics:/srv/config
+      - ./config:/srv/config
     expose:
       - 8080
     links:
       - mongodb
     entrypoint: /srv/exec.sh 8080
     environment:
-      - VIRTUAL_HOST=echo-now.burdukov.by
+      - VIRTUAL_HOST=echo.burdukov.by
       - VIRTUAL_PORT=8080
-      - LETSENCRYPT_HOST=echo-now.burdukov.by
-      - LETSENCRYPT_EMAIL=chippcheg@gmail.com
-    restart: unless-stopped
-  feed-master-later:
-    build: .
-    image: umputun/feed-master-later
-    container_name: feed-master-later
-    volumes:
-      - ./config-history:/srv/config
-    expose:
-      - 8080
-    links:
-      - mongodb
-    entrypoint: /srv/exec.sh 8080
-    environment:
-      - VIRTUAL_HOST=echo-later.burdukov.by
-      - VIRTUAL_PORT=8080
-      - LETSENCRYPT_HOST=echo-later.burdukov.by
+      - LETSENCRYPT_HOST=echo.burdukov.by
       - LETSENCRYPT_EMAIL=chippcheg@gmail.com
     restart: unless-stopped
   mongodb:

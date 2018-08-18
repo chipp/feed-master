@@ -11,7 +11,8 @@ feeds = [
     ("Интервью",            "http://echo.msk.ru/programs/beseda/rss-audio.xml"),
     ("Невзоровские среды",  "http://echo.msk.ru/programs/nevsredy/rss-audio.xml"),
     ("Без посредников",     "http://echo.msk.ru/programs/nomed/rss-audio.xml"),
-    ("Будем наблюдать",     "https://echo.msk.ru/programs/observation/rss-audio.xml")
+    ("Будем наблюдать",     "https://echo.msk.ru/programs/observation/rss-audio.xml"),
+    ("Венедиктовские среды","https://echo.msk.ru/programs/aav-wednesday/rss-audio.xml")
 ]
 
 settings = {

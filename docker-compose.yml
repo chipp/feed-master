@@ -1,17 +1,28 @@
-feed-master2:
-    image: umputun/feed-master:master
-    container_name: feed-master2
-    hostname: feed-master2
-    restart: always
+version: '3'
+services:
+    feed-master2:
+        image: umputun/feed-master:master
+        container_name: feed-master2
+        hostname: feed-master2
+        restart: always
 
-    environment:
-        - MHOST
-        - DEBUG=false
-        - FM_DB=/srv/var/feed-master.bdb
-        - FM_CONF=/srv/etc/fm.yml
-    volumes:
-        - ./etc:/srv/etc
-        - ./var:/srv/var
-        - ./static:/srv/static
-    ports:
-        - "8097:8080"
+        environment:
+            - MHOST
+            - DEBUG=false
+            - FM_DB=/srv/var/feed-master.bdb
+            - FM_CONF=/srv/etc/fm.yml
+            - VIRTUAL_HOST=echo.burdukov.by
+            - VIRTUAL_PORT=8080
+            - LETSENCRYPT_HOST=echo.burdukov.by
+            - LETSENCRYPT_EMAIL=chippcheg@gmail.com
+        volumes:
+            - ./etc:/srv/etc
+            - ./var:/srv/var
+            - ./static:/srv/static
+        expose:
+            - 8080
+
+networks:
+    default:
+        external:
+            name: nginxproxy_default

@@ -28,6 +28,7 @@ type Rss2 struct {
 	Description   string `xml:"channel>description"`
 	PubDate       string `xml:"channel>pubDate"`
 	LastBuildDate string `xml:"channel>lastBuildDate"`
+	Image         Image  `xml:"channel>image"`
 
 	ItemList []Item `xml:"channel>item"`
 }
@@ -80,6 +81,13 @@ type Author struct {
 	Email string `xml:"email"`
 }
 
+// Image element for channel xml
+type Image struct {
+	URL   string `xml:"url"`
+	Title string `xml:"title"`
+	Link  string `xml:"link"`
+}
+
 // Entry from atom
 type Entry struct {
 	Title     string    `xml:"title"`
@@ -90,6 +98,12 @@ type Entry struct {
 	Link      Link      `xml:"link"`
 	Author    Author    `xml:"author"`
 	Enclosure Enclosure `xml:"enclosure"`
+}
+
+type IImage struct {
+	URL   string `xml:"url"`
+	Title string `xml:"title"`
+	Link  string `xml:"link"`
 }
 
 // Parse gets url to rss feed and returns Rss2 items

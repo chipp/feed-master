@@ -1,6 +1,7 @@
 version: '3'
 services:
     feed-master2:
+        build: .
         image: umputun/feed-master:master
         container_name: feed-master2
         hostname: feed-master2

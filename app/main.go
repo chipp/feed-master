@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/hashicorp/logutils"
-	"github.com/jessevdk/go-flags"
-	"gopkg.in/yaml.v2"
+	flags "github.com/jessevdk/go-flags"
+	yaml "gopkg.in/yaml.v2"
 
 	"github.com/umputun/feed-master/app/feed"
 	"github.com/umputun/feed-master/app/proc"
@@ -70,7 +70,11 @@ func serveHTTP(db *proc.BoltDB, conf *proc.Conf) {
 			Link:          conf.Feeds[fm].Link,
 			PubDate:       items[0].PubDate,
 			LastBuildDate: time.Now().Format(time.RFC822Z),
-			//Image:         &feed.IImage{HREF: fmt.Sprintf("%s/image/%s.png", conf.BaseURL, fm)},
+			Image: feed.Image{
+				URL:   fmt.Sprintf("%s/image/%s.png", conf.BaseURL, fm),
+				Title: conf.Feeds[fm].Title,
+				Link:  fmt.Sprintf("%s/rss/%s", conf.BaseURL, fm),
+			},
 		}
 		b, err := xml.MarshalIndent(&rss, "", "  ")
 		if err != nil {

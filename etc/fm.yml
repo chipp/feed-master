@@ -11,7 +11,7 @@ feeds:
             - {name: "Ганапольское", url: "http://echo.msk.ru/programs/ganapolskoe_itogi/rss-audio.xml"}
             - {name: "Кейс", url: "http://echo.msk.ru/programs/keys/rss-audio.xml"}
             - {name: "Альбац", url: "http://echo.msk.ru/programs/albac/rss-audio.xml"}
-            - {name: "Код доступа",- url: "http://echo.msk.ru/programs/code/rss-audio.xml"}
+            - {name: "Код доступа", url: "http://echo.msk.ru/programs/code/rss-audio.xml"}
             - {name: "Особое мнение", url: "http://echo.msk.ru/programs/personalno/rss-audio.xml"}
             - {name: "2017", url: "http://echo.msk.ru/programs/year2017/rss-audio.xml"}
             - {name: "Интервью", url: "http://echo.msk.ru/programs/beseda/rss-audio.xml"}
